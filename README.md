@@ -2,7 +2,7 @@
 
 A Claude Code skill (also usable as plain context for any LLM) for making **premium, launch-style commercials for real businesses** with AI-generated footage, code-built motion (HTML/GSAP), selective Three.js, and an independent-critic quality loop.
 
-It packages what was learned from studying 28 professional SaaS launch films and from building a full sample commercial through five rounds of independent critique:
+It packages what was learned from studying 28 professional SaaS launch films and from building two full sample commercials through dozens of rounds of independent critique: a calm service film, and a 40 s Three.js product spec ad for a foldable phone in which every frame is code:
 
 - **The Gauntlet loop:** builder ≠ judge, fresh critics on the actual render, item-by-item verification, and a ledger. Includes ready-to-use critic prompts.
 - **Motion grammar:** six rules and a catalog of 16 reusable mechanisms, plus notes on all 28 reference films (links to the originals; no footage redistributed).
@@ -10,6 +10,7 @@ It packages what was learned from studying 28 professional SaaS launch films and
 - **Audio rules:** matching music to the buyer's customer, sparse clean sound effects, mix targets.
 - **Business playbook:** verticals with buying evidence and price anchors, a pilot-offer template, honesty rules.
 - **Three.js patterns:** deterministic, seekable scenes; exploded layers with projected callouts; photos pinned in 3D context; animated option patches; a realism checklist.
+- **Product hero realism:** how to match a real device's motion frame by frame (measured angle keys, a monotone cubic, locked camera), screen continuity and frost, deterministic accumulation motion blur, and lights that reveal the angle without flashing.
 - **Scripts and templates:** frozen-time and loudness measurement, contact sheets, sound-effect softening, an isolated component lab, and a projected-overlay module.
 
 ## Install (Claude Code)
@@ -43,8 +44,10 @@ business-motion-film/
     audio.md                    music, SFX, mix
     business-offers.md          verticals, evidence, price anchors, pilot offer
     three-js-patterns.md        render contract, patterns, realism checklist
-    case-study-alder.md         a full worked example
-  scripts/                      frozen-time, loudness, contact-sheet, soften-sfx, sfx-candidates, solve-sfx-gains
+    case-study-alder.md         a full worked example (calm service film)
+    product-hero-realism.md     making a 3D device move like the real one
+    case-study-duo.md           a Three.js product film, round by round
+  scripts/                      frozen-time, loudness, contact-sheet, soften-sfx, sfx-candidates, solve-sfx-gains, offline-mix
   templates/                    component-lab.html, projected-overlays.js
 ```
 

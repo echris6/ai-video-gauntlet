@@ -14,9 +14,10 @@ Read only the reference file your current step needs:
 | Choosing a vertical, offer, pilot scope, pricing anchors | `references/business-offers.md` |
 | Storyboarding and motion design | `references/motion-grammar.md`, then `references/launch-film-notes.md` for concrete moments |
 | Building 3D components | `references/three-js-patterns.md`, `templates/component-lab.html`, `templates/projected-overlays.js` |
+| A 3D product hero that must move like the real thing (unfolds, closes, reveals) | `references/product-hero-realism.md` |
 | Any review round | `references/gauntlet.md`, `references/critic-prompts.md`, `references/quality-bar.md` |
 | Music, sound effects, mix | `references/audio.md` |
-| A worked example end to end | `references/case-study-alder.md` |
+| A worked example end to end | `references/case-study-alder.md` (calm service film), `references/case-study-duo.md` (Three.js product film) |
 
 ## Non-negotiables
 

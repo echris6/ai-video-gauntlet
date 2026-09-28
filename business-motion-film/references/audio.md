@@ -35,3 +35,26 @@ Rules:
 - Mix and render as part of the composition (per-track volume, automation for dips under dense reading moments).
 - **Loudness:** reference launch films master around −14 LUFS (some at −7 to −10). The approved calm film landed at −19 LUFS integrated once the client lowered the music 30%, with effects clearly audible on top. A dense effects layer at −14 was rejected as too loud. True peak ≤ −1 dBFS with a limiter. Copy the video stream untouched; AAC 256k.
 - Measure with `scripts/loudness.sh`. State honestly whether anyone actually listened, since measurements can't judge taste.
+
+## Energetic product films (from a 40 s Three.js product spec, 2026-09)
+
+- **Library music beat the AI scores.** The client called two rounds of generated "brand-style" scores "a bit off". A human-made library track, **edited to picture**, landed well. Mixkit stock music is reachable at `https://assets.mixkit.co/music/<id>/<id>.mp3` (IDs come from the `data-audio-player-preview-url-value` attributes on the tag pages). Check the licence and credit the tracks.
+- **Edit it like a music editor:**
+  - time-stretch to a tempo where every cut falls on a beat (120 BPM puts cuts at x.0 and x.5);
+  - measure the real onset at each cut and stretch ≤0.5 % between cuts (a generic beat-warp locked onto the off-beat);
+  - a sparse or filtered intro, with the groove arriving on the hero moment;
+  - a dead stop (about 0.4 s) and the track's own drop on the biggest cut;
+  - the track's own final hit spliced on the end card, with equal-power crossfades on bar lines;
+  - a 5 ms fade-in, because a full-level first sample clicks.
+- **Make the drop land.** A drop that measured only +0.2 LU needed two things: a 40→300 Hz high-pass build over the 2 s before it, and a −2.5 dB dip applied **after** the bus compressors (before them, the compressors flatten it out). Result: +2.7 LU, and the bass +9 dB into the drop.
+- **Brand study, for grammar only.** The reference brand film measured about 124 BPM, four-on-the-floor, with flat and confident density, a restrained 2–5 kHz, dead stops and a button ending. Don't name brands or artists in generator prompts; they get rejected.
+- **Levels the client approved:**
+  - music at about −30 LUFS (he asked for 10 % less than −29);
+  - whooshes as a soft "air pass" at about +2–3 dB in-band, raising short-term loudness ≤0.5 LU. A bundled whoosh at +7 dB was "too loud" and unprofessional;
+  - micro sounds on **every small mechanical move** (screws backing out, parts re-seating, detents, panes docking): real recordings, each peaking **at or below** the local music peak.
+- **Mixer guards** (`scripts/offline-mix.py`):
+  - **Level floors:** over a dead stop or a sparse intro, "+N dB over the music" makes an effect inaudible. A per-event floor on the reference level fixes it.
+  - **A high-frequency floor:** the 2–8 kHz cap is measured against a floor, or a bass-only intro lets nothing through.
+  - **A peak cap:** no effect may peak more than about 6 dB over the local music peak (8 dB for a signature hit). Without it, a key-press thock spiked to −2.8 dBFS in a −29 LUFS mix.
+  - **Report "body" as well:** the 150 ms in-band RMS lift, verified on the decoded file against a music-only render. The 50 ms peak alone over-reported a 0.15 s thock by 8 dB.
+- **Synthesised thocks were rejected** as "a pitched tom" or not professional. Layered real recordings worked, e.g. a laptop key press plus a soft body punch, about 100 ms long.
